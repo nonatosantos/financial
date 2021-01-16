@@ -1,4 +1,4 @@
-import { CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 export class BaseEntity {
 
@@ -10,4 +10,7 @@ export class BaseEntity {
 
     @UpdateDateColumn()
     updatedAt: Date;
+
+    @Column({ nullable: false, type: 'bool', default: true })
+    active: boolean;
 }
